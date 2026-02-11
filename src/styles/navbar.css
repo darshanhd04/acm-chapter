@@ -1,0 +1,175 @@
+/* Base Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    /* Wider container for the pill nav */
+    padding: 0 2rem;
+}
+
+/* Logo Styles */
+.logo-wrapper {
+    background: white;
+    padding: 8px 12px;
+    border-radius: 50px;
+    /* Pill shape for logo container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-wrapper img {
+    height: 32px;
+    width: auto;
+}
+
+/* Center Pill Navigation */
+.nav-center-pill {
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 6px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 4px;
+}
+
+.nav-link-pill {
+    position: relative;
+    padding: 10px 20px;
+    color: #a1a1aa;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 40px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-link-pill:hover {
+    color: white;
+}
+
+.nav-link-pill.active {
+    color: white;
+}
+
+.nav-text {
+    position: relative;
+    z-index: 2;
+}
+
+.active-bg {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    z-index: 1;
+}
+
+.hover-bg {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.15);
+    /* Slightly brighter for hover */
+    border-radius: 40px;
+    z-index: 1;
+}
+
+/* Right Actions */
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-icon {
+    display: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile Styles */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 90px;
+    /* Below navbar */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 90px);
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mobile-nav-list {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow-y: auto;
+}
+
+.mobile-nav-link {
+    font-size: 1.5rem;
+    color: #a1a1aa;
+    text-decoration: none;
+    font-weight: 700;
+    display: block;
+}
+
+.mobile-nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 968px) {
+    .nav-center-pill {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}

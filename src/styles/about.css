@@ -1,0 +1,63 @@
+.about-hero {
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80') no-repeat center center/cover;
+    padding: 180px 0 6rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.about-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.about-card {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.about-icon {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.about-card h2 {
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.about-card p {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.history-section {
+    background: var(--surface);
+    padding: 3rem;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--accent);
+}
+
+.history-section h2 {
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.history-section p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}

@@ -1,0 +1,205 @@
+/* Base Layout */
+.team-header-section {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.team-intro {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.team-category-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--text);
+    background: linear-gradient(90deg, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Faculty Section */
+.faculty-section {
+    margin-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faculty-card-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Bento Grid System */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .size-large {
+        grid-column: span 1;
+    }
+}
+
+/* Card Styles */
+.team-card-wrapper {
+    width: 100%;
+    height: 450px;
+    /* Taller fixed height for portraits */
+}
+
+.team-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.team-card:hover {
+    box-shadow: 0 20px 40px -10px rgba(56, 189, 248, 0.25);
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* Full Image Background */
+.team-image-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.team-image-full img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    /* Focus on faces */
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-image-full img {
+    transform: scale(1.05);
+    /* Subtle zoom on hover */
+}
+
+/* Gradients */
+.card-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(15, 23, 42, 0.2) 50%,
+            rgba(15, 23, 42, 0.9) 90%,
+            rgba(15, 23, 42, 1) 100%);
+    z-index: 1;
+}
+
+/* Info Overlay */
+.team-info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    z-index: 2;
+    transform: translateZ(20px);
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center text */
+    text-align: center;
+}
+
+.info-content h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.team-role {
+    color: var(--accent);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Socials */
+.team-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-link {
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    transition: all 0.2s ease;
+}
+
+.social-link:hover {
+    color: white;
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* Glow Border (Optional, mimicking border) */
+.card-border-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    pointer-events: none;
+    z-index: 3;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        /* Allow full width */
+        gap: 2rem;
+        padding: 0 1rem;
+        /* Safety padding */
+    }
+
+    .team-card-wrapper {
+        min-height: 400px;
+        height: auto;
+        /* Let it grow if needed */
+        aspect-ratio: 3/4;
+        /* Better portrait ratio for mobile */
+    }
+}
