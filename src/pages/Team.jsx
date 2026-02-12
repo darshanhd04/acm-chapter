@@ -52,11 +52,91 @@ const Team = () => {
         {
             id: 4,
             name: "Likith S",
-            role: "Web Master",
+            role: "Treasurer",
             image: "https://ui-avatars.com/api/?name=Likith+S&background=d97706&color=fff",
             github: "https://github.com",
             linkedin: "https://linkedin.com",
             email: "[EMAIL_ADDRESS]",
+            size: "medium"
+        },
+        {
+            id: 5,
+            name: "Darshan R",
+            role: "Web Master",
+            image: "https://ui-avatars.com/api/?name=Member+5&background=random&color=fff",
+            github: "https://github.com",
+            linkedin: "https://linkedin.com",
+            email: "member@acmsit.in",
+            size: "medium"
+        },
+        {
+            id: 6,
+            name: "Pushpalatha G M",
+            role: "Membership Chair",
+            image: "https://ui-avatars.com/api/?name=Member+6&background=random&color=fff",
+            github: "https://github.com",
+            linkedin: "https://linkedin.com",
+            email: "member@acmsit.in",
+            size: "medium"
+        },
+        {
+            id: 7,
+            name: "Roshni Begam",
+            role: "Project & Research Head",
+            image: "https://ui-avatars.com/api/?name=Member+7&background=random&color=fff",
+            github: "https://github.com",
+            linkedin: "https://linkedin.com",
+            email: "member@acmsit.in",
+            size: "medium"
+        },
+        {
+            id: 8,
+            name: "Swathi Sharanya K V",
+            role: "Project & Research Head",
+            image: "https://ui-avatars.com/api/?name=Member+8&background=random&color=fff",
+            github: "https://github.com",
+            linkedin: "https://linkedin.com",
+            email: "member@acmsit.in",
+            size: "medium"
+        },
+        {
+            id: 9,
+            name: "Ayesha Khan",
+            role: "Marketing Head",
+            image: "https://ui-avatars.com/api/?name=Member+9&background=random&color=fff",
+            github: "https://github.com",
+            linkedin: "https://linkedin.com",
+            email: "member@acmsit.in",
+            size: "medium"
+        },
+        {
+            id: 10,
+            name: "Iqraa Fathima",
+            role: "Marketing Head",
+            image: "https://ui-avatars.com/api/?name=Member+10&background=random&color=fff",
+            github: "https://github.com",
+            linkedin: "https://linkedin.com",
+            email: "member@acmsit.in",
+            size: "medium"
+        },
+        {
+            id: 11,
+            name: "Manoj S",
+            role: "Social Media Head",
+            image: "https://ui-avatars.com/api/?name=Member+11&background=random&color=fff",
+            github: "https://github.com",
+            linkedin: "https://linkedin.com",
+            email: "member@acmsit.in",
+            size: "medium"
+        },
+        {
+            id: 12,
+            name: "Vaishnavi T",
+            role: "Design Head",
+            image: "https://ui-avatars.com/api/?name=Member+12&background=random&color=fff",
+            github: "https://github.com",
+            linkedin: "https://linkedin.com",
+            email: "member@acmsit.in",
             size: "medium"
         }
     ];
@@ -64,7 +144,7 @@ const Team = () => {
     return (
         <PageTransition>
             <div className="page-container">
-                <div className="container" style={{ paddingTop: '180px', paddingBottom: '4rem' }}>
+                <div className="container" style={{ paddingTop: '180px', paddingBottom: '4rem', maxWidth: '1800px' }}>
 
                     {/* Header Section */}
                     <div className="team-header-section">

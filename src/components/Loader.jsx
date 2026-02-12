@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/acm-sit-logo-new.png';
 
 const Loader = ({ setLoading }) => {
     return (
@@ -8,42 +7,38 @@ const Loader = ({ setLoading }) => {
             className="loader-container"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }} // Faster exit
+            transition={{ duration: 0.8, ease: "easeInOut" }}
             onAnimationComplete={() => setLoading(false)}
         >
             <div className="loader-content">
                 <motion.div
-                    className="loader-logo-wrapper"
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }} // Faster logo
+                    className="loader-text-container"
+                    initial="hidden"
+                    animate="visible"
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.25,
+                                delayChildren: 0.2
+                            }
+                        }
+                    }}
                 >
-                    <img src={logo} alt="ACM SIT" className="loader-logo" />
+                    <motion.span variants={itemVariants} className="text-line highlight">Empower.</motion.span>
+                    <motion.span variants={itemVariants} className="text-line">Innovate.</motion.span>
+                    <motion.span variants={itemVariants} className="text-line highlight">Create.</motion.span>
                 </motion.div>
 
+                {/* Minimalist Progress Line */}
                 <motion.div
-                    className="loader-text"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 0.5 }} // Faster text
+                    className="progress-line-container"
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    animate={{ scaleX: 1, opacity: 1 }}
+                    transition={{ delay: 0.8, duration: 1.2, ease: "circOut" }}
                 >
-                    <span className="text-line">Empower.</span>
-                    <span className="text-line">Innovate.</span>
-                    <span className="text-line">Create.</span>
-                </motion.div>
-
-                <motion.div
-                    className="progress-bar-container"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.4 }} // Start sooner
-                >
-                    <motion.div
-                        className="progress-bar"
-                        initial={{ width: "0%" }}
-                        animate={{ width: "100%" }}
-                        transition={{ duration: 1.2, ease: "easeInOut", delay: 0.4 }} // Faster progress
-                    />
+                    <div className="progress-line" />
                 </motion.div>
             </div>
 
@@ -59,42 +54,97 @@ const Loader = ({ setLoading }) => {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    overflow: hidden;
                 }
+
+                /* Subtle animated background mesh */
+                .loader-container::before {
+                    content: '';
+                    position: absolute;
+                    width: 200%;
+                    height: 200%;
+                    background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.03) 0%, transparent 50%);
+                    animation: pulse-bg 4s ease-in-out infinite;
+                }
+
+                @keyframes pulse-bg {
+                    0%, 100% { transform: scale(1); opacity: 0.5; }
+                    50% { transform: scale(1.1); opacity: 1; }
+                }
+
                 .loader-content {
+                    position: relative;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 2rem;
+                    z-index: 2;
                 }
-                .loader-logo {
-                    width: 100px;
-                    height: auto;
-                    border-radius: 12px;
-                    box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
-                }
-                .loader-text {
+
+                .loader-text-container {
                     display: flex;
-                    gap: 1rem;
-                    font-size: 1.2rem;
-                    font-weight: 300;
-                    color: #94a3b8;
-                    letter-spacing: 2px;
-                    text-transform: uppercase;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.5rem;
                 }
-                .progress-bar-container {
-                    width: 200px;
-                    height: 2px;
+
+                .text-line {
+                    font-family: 'Outfit', sans-serif;
+                    font-size: 3.5rem; /* Large impact */
+                    font-weight: 700;
+                    color: #e2e8f0;
+                    letter-spacing: -2px;
+                    line-height: 1;
+                    /* Clip background text for gradient effect if desired, but solid is cleaner for now */
+                }
+
+                .text-line.highlight {
+                    color: white;
+                    text-shadow: 0 0 20px rgba(56, 189, 248, 0.5); /* Glow effect */
+                }
+
+                .progress-line-container {
+                    margin-top: 3rem;
+                    width: 60px;
+                    height: 4px;
                     background: rgba(255, 255, 255, 0.1);
-                    border-radius: 4px;
+                    border-radius: 2px;
                     overflow: hidden;
                 }
-                .progress-bar {
+
+                .progress-line {
+                    width: 100%;
                     height: 100%;
                     background: #38bdf8;
+                    box-shadow: 0 0 10px #38bdf8;
+                }
+
+                @media (max-width: 768px) {
+                    .text-line {
+                        font-size: 2.5rem;
+                    }
                 }
             `}</style>
         </motion.div>
     );
+};
+
+const itemVariants = {
+    hidden: {
+        y: 40,
+        opacity: 0,
+        filter: "blur(10px)",
+        rotateX: -20
+    },
+    visible: {
+        y: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+        rotateX: 0,
+        transition: {
+            duration: 0.8,
+            ease: [0.2, 0.65, 0.3, 0.9], // Custom cubic bezier
+        }
+    }
 };
 
 export default Loader;
