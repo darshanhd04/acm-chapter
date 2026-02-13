@@ -156,7 +156,7 @@ const Team = () => {
         },
         {
             id: 13,
-            name: "Reshma Mesta",
+            name: "Raksha Mesta",
             role: "Member",
             image: reshmaImg,
             github: "https://github.com/Raksha-tm",
