@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import '../styles/team.css';
 
-const TeamMemberCard = ({ name, role, image, github, linkedin, email, size = "medium" }) => {
+const TeamMemberCard = ({ name, role, image, github, linkedin, email, size = "medium", variants }) => {
     // 3D Tilt Logic
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -35,10 +35,8 @@ const TeamMemberCard = ({ name, role, image, github, linkedin, email, size = "me
             style={{ perspective: 1000 }}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            variants={variants}
+            whileHover={{ y: -10, transition: { duration: 0.3 } }}
         >
             <motion.div
                 className="team-card"

@@ -12,6 +12,12 @@ import ShoiabImg from '../assets/Shoiab.jpeg';
 import nuthanImg from '../assets/Nuthan.jpeg';
 import IqraaImg from '../assets/Iqraa.jpeg';
 import SiddaImg from '../assets/Sidda.jpeg';
+import likithImg from '../assets/likith.jpeg';
+import darshanRImg from '../assets/darshanr.jpeg';
+import roshniImg from '../assets/roshni.jpeg';
+import swathiImg from '../assets/Swathi.jpeg';
+import ayeshaImg from '../assets/ayesha.jpeg';
+import manojImg from '../assets/manoj.jpeg';
 
 const Team = () => {
     // Faculty
@@ -60,20 +66,20 @@ const Team = () => {
             id: 4,
             name: "Likith S",
             role: "Treasurer",
-            image: "https://ui-avatars.com/api/?name=Likith+S&background=d97706&color=fff",
-            github: "https://github.com",
-            linkedin: "https://linkedin.com",
-            email: "[EMAIL_ADDRESS]",
+            image: likithImg,
+            github: "https://github.com/likiths0802-prog",
+            linkedin: "https://www.linkedin.com/in/likith-s-394403384",
+            email: "likiths0802@gmail.com",
             size: "medium"
         },
         {
             id: 5,
             name: "Darshan R",
             role: "Web Master",
-            image: "https://ui-avatars.com/api/?name=Member+5&background=random&color=fff",
-            github: "https://github.com",
-            linkedin: "https://linkedin.com",
-            email: "member@acmsit.in",
+            image: darshanRImg,
+            github: "https://github.com/darshanr-codespace",
+            linkedin: "https://www.linkedin.com/in/darshan-r-6b58973b0",
+            email: "darshan.ramachandraiah10@gmail.com",
             size: "medium"
         },
         {
@@ -81,7 +87,7 @@ const Team = () => {
             name: "Pushpalatha G M",
             role: "Membership Chair",
             image: pushpaImg,
-            github: "https://github.com",
+            github: "https://github.com/bharathskanda",
             linkedin: "https://www.linkedin.com/in/pushpalatha-g-m-11b266346",
             email: "Pushpalatha70180@gmail.com",
             size: "medium"
@@ -90,30 +96,30 @@ const Team = () => {
             id: 7,
             name: "Roshni Begam",
             role: "Project & Research Head",
-            image: "https://ui-avatars.com/api/?name=Member+7&background=random&color=fff",
-            github: "https://github.com",
-            linkedin: "https://linkedin.com",
-            email: "member@acmsit.in",
+            image: roshniImg,
+            github: "https://github.com/Roshnii2608",
+            linkedin: "https://www.linkedin.com/in/roshnibegum2608/",
+            email: " roshnii2608@gmail.com",
             size: "medium"
         },
         {
             id: 8,
             name: "Swathi Sharanya K V",
             role: "Project & Research Head",
-            image: "https://ui-avatars.com/api/?name=Member+8&background=random&color=fff",
-            github: "https://github.com",
-            linkedin: "https://linkedin.com",
-            email: "member@acmsit.in",
+            image: swathiImg,
+            github: "https://github.com/kvsharanya1504",
+            linkedin: "https://www.linkedin.com/in/swathi-sharanya-k-v-00583b301",
+            email: "kvsharanya1504@gmail.com",
             size: "medium"
         },
         {
             id: 9,
             name: "Ayesha Khan",
             role: "Marketing Head",
-            image: "https://ui-avatars.com/api/?name=Member+9&background=random&color=fff",
-            github: "https://github.com",
-            linkedin: "https://linkedin.com",
-            email: "member@acmsit.in",
+            image: ayeshaImg,
+            github: "https://github.com/AyeshaKhan18675",
+            linkedin: "https://www.linkedin.com/in/ayesha-khan-8a02282b2",
+            email: "ayeshakhan71114@gmail.com",
             size: "medium"
         },
         {
@@ -130,10 +136,10 @@ const Team = () => {
             id: 11,
             name: "Manoj S",
             role: "Social Media Head",
-            image: "https://ui-avatars.com/api/?name=Member+11&background=random&color=fff",
-            github: "https://github.com",
-            linkedin: "https://linkedin.com",
-            email: "member@acmsit.in",
+            image: manojImg,
+            github: "https://github.com/Manoj-Artist",
+            linkedin: "https://www.linkedin.com/in/manoj-s-7b788b3b0/",
+            email: "manojr7artist@gmail.com",
             size: "medium"
         },
         {
@@ -167,6 +173,21 @@ const Team = () => {
             size: "medium"
         }
     ];
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 50 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
 
     return (
         <PageTransition>
@@ -209,11 +230,17 @@ const Team = () => {
                     {/* Core Team Grid - Bento Layout */}
                     <motion.div className="core-team-section">
                         <h2 className="team-category-title">Core Committee</h2>
-                        <div className="bento-grid">
+                        <motion.div
+                            className="bento-grid"
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                        >
                             {teamMembers.map(member => (
-                                <TeamMemberCard key={member.id} {...member} />
+                                <TeamMemberCard key={member.id} {...member} variants={itemVariants} />
                             ))}
-                        </div>
+                        </motion.div>
                     </motion.div>
 
                 </div>
