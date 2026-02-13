@@ -50,7 +50,7 @@ const Contact = () => {
                                 <Mail className="info-icon" />
                                 <div>
                                     <h3>Email</h3>
-                                    <p>acm@sit.ac.in</p>
+                                    <p>mcasitacm@sit.ac.in</p>
                                 </div>
                             </div>
 

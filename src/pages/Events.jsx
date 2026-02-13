@@ -1,7 +1,12 @@
 import React from 'react';
 import EventCard from '../components/EventCard';
+import { Plus } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
+
+import hacktoberfestImg from '../assets/hacktoberfest.svg';
+import aiWorkshopImg from '../assets/ai_workshop.svg';
+import webBootcampImg from '../assets/web_bootcamp.svg';
 
 const Events = () => {
     const events = [
@@ -12,7 +17,7 @@ const Events = () => {
             time: "10:00 AM",
             location: "SIT Campus",
             description: "Celebrating open source with code, workshops, and swag.",
-            image: "https://images.unsplash.com/photo-1504384308090-c54be3852f9d?auto=format&fit=crop&q=80"
+            image: hacktoberfestImg
         },
         {
             id: 2,
@@ -21,7 +26,7 @@ const Events = () => {
             time: "2:00 PM",
             location: "CS Dept Seminar Hall",
             description: "Deep dive into Neural Networks and Deep Learning concepts.",
-            image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80"
+            image: aiWorkshopImg
         },
         {
             id: 3,
@@ -30,7 +35,7 @@ const Events = () => {
             time: "9:00 AM",
             location: "Online",
             description: "Learn React, Node.js and build a full-stack application.",
-            image: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&q=80"
+            image: webBootcampImg
         }
     ];
 
@@ -53,12 +58,51 @@ const Events = () => {
         <PageTransition>
             <div className="page-container">
                 <div className="container" style={{ paddingTop: '180px', paddingBottom: '4rem' }}>
-                    <motion.h1
-                        className="section-title"
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5 }}
-                    >Upcoming Events</motion.h1>
+                    <div className="events-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
+                        <motion.h1
+                            className="section-title"
+                            style={{ marginBottom: 0 }}
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5 }}
+                        >Upcoming Events</motion.h1>
+
+                        <motion.button
+                            className="btn"
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5 }}
+                            whileHover={{
+                                scale: 1.05,
+                                boxShadow: "0 0 15px rgba(56, 189, 248, 0.5)"
+                            }}
+                            whileTap={{ scale: 0.95 }}
+                            style={{
+                                background: "linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%)",
+                                color: "white",
+                                border: "none",
+                                position: "relative",
+                                overflow: "hidden"
+                            }}
+                            onClick={() => alert('Add Event functionality coming soon!')}
+                        >
+                            <motion.div
+                                style={{
+                                    position: "absolute",
+                                    top: 0,
+                                    left: 0,
+                                    width: "100%",
+                                    height: "100%",
+                                    background: "rgba(255, 255, 255, 0.1)",
+                                    transform: "skewX(-20deg) translateX(-150%)"
+                                }}
+                                animate={{ left: ["-100%", "200%"] }}
+                                transition={{ repeat: Infinity, duration: 2, ease: "linear", repeatDelay: 1 }}
+                            />
+                            <Plus size={20} style={{ marginRight: '8px' }} />
+                            Add Event
+                        </motion.button>
+                    </div>
 
                     <motion.div
                         className="events-grid"

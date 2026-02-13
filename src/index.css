@@ -1,4 +1,5 @@
 :root {
+  /* Dark Mode (Default) */
   --primary: #007bff;
   --primary-hover: #0056b3;
   --secondary: #6c757d;
@@ -13,11 +14,75 @@
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
   --font-sans: var(--font-body);
-  /* Fallback */
+
+  /* Component Colors (Dark Default) */
+  --nav-bg: rgba(10, 10, 10, 0.8);
+  --nav-glass-border: rgba(255, 255, 255, 0.05);
+  --nav-pill-bg: rgba(20, 20, 20, 0.6);
+  --nav-link-color: #a1a1aa;
+  --nav-link-hover: #ffffff;
+  --nav-item-active-bg: rgba(255, 255, 255, 0.1);
+
+  --hero-gradient-start: rgba(20, 30, 60, 0.4);
+  --hero-badge-bg: rgba(255, 255, 255, 0.05);
+  --hero-badge-border: rgba(255, 255, 255, 0.1);
+  --hero-badge-text: #e5e5e5;
+  --hero-heading-color: #ffffff;
+
+  --card-bg: rgba(30, 41, 59, 0.4);
+  --card-hover-bg: rgba(30, 41, 59, 0.7);
+
+  --button-primary-bg: #ffffff;
+  --button-primary-color: #000000;
+  --button-secondary-bg: rgba(255, 255, 255, 0.05);
+  --button-secondary-color: #ffffff;
+  --button-secondary-hover-bg: rgba(255, 255, 255, 0.1);
+
+  --cta-gradient-from: #ffffff;
+  --cta-gradient-to: #94a3b8;
 }
 
+:root[data-theme='light'] {
+  --primary: #007bff;
+  --primary-hover: #0056b3;
+  --secondary: #6c757d;
+  --background: #ffffff;
+  --surface: #f1f5f9;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --accent: #0ea5e9;
+  --border: #cbd5e1;
+
+  /* Component Colors (Light Mode) */
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --nav-glass-border: rgba(0, 0, 0, 0.05);
+  --nav-pill-bg: rgba(240, 240, 240, 0.6);
+  --nav-link-color: #64748b;
+  --nav-link-hover: #0f172a;
+  --nav-item-active-bg: rgba(0, 0, 0, 0.05);
+
+  --hero-gradient-start: rgba(200, 210, 240, 0.4);
+  --hero-badge-bg: rgba(0, 0, 0, 0.05);
+  --hero-badge-border: rgba(0, 0, 0, 0.1);
+  --hero-badge-text: #1e293b;
+  --hero-heading-color: #0f172a;
+
+  --card-bg: rgba(255, 255, 255, 0.4);
+  --card-hover-bg: rgba(255, 255, 255, 0.7);
+
+  --button-primary-bg: #0f172a;
+  --button-primary-color: #ffffff;
+  --button-secondary-bg: rgba(0, 0, 0, 0.05);
+  --button-secondary-color: #0f172a;
+  --button-secondary-hover-bg: rgba(0, 0, 0, 0.1);
+
+  --cta-gradient-from: #0f172a;
+  --cta-gradient-to: #64748b;
+}
 
 body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+
   font-family: var(--font-body);
   background-color: var(--background);
   color: var(--text);
@@ -86,6 +151,7 @@ button {
   margin-bottom: 3rem;
   text-align: center;
   background: linear-gradient(to right, var(--text), var(--accent));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

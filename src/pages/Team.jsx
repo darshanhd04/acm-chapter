@@ -5,6 +5,13 @@ import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import darshanImg from '../assets/darshan.jpg';
 import premasudhaImg from '../assets/premasudha.jpg';
+import pushpaImg from '../assets/Pushpa.jpeg';
+import reshmaImg from '../assets/reshma.jpeg';
+import vaishnaviImg from '../assets/vaishnavi.jpeg';
+import ShoiabImg from '../assets/Shoiab.jpeg';
+import nuthanImg from '../assets/Nuthan.jpeg';
+import IqraaImg from '../assets/Iqraa.jpeg';
+import SiddaImg from '../assets/Sidda.jpeg';
 
 const Team = () => {
     // Faculty
@@ -33,20 +40,20 @@ const Team = () => {
             id: 2,
             name: "Nuthan A M",
             role: "Vice Chairperson",
-            image: "https://ui-avatars.com/api/?name=Nuthan+A+M&background=7c3aed&color=fff",
-            github: "https://github.com",
-            linkedin: "https://linkedin.com",
-            email: "[EMAIL_ADDRESS]",
+            image: nuthanImg,
+            github: "https://github.com/Nuthan-27",
+            linkedin: "https://www.linkedin.com/in/nuthan27/",
+            email: "nuthan27.am@gmail.com",
             size: "medium"
         },
         {
             id: 3,
             name: "Mohammad Shoaib",
             role: "Secretary",
-            image: "https://ui-avatars.com/api/?name=Mohammad+Shoaib&background=059669&color=fff",
-            github: "https://github.com",
-            linkedin: "https://linkedin.com",
-            email: "[EMAIL_ADDRESS]",
+            image: ShoiabImg,
+            github: "https://github.com/STRA23",
+            linkedin: "https://linkedin.com/in/mohammed-shoaib-b49276255",
+            email: "shoaibshoaib2812@gmail.com",
             size: "medium"
         },
         {
@@ -73,10 +80,10 @@ const Team = () => {
             id: 6,
             name: "Pushpalatha G M",
             role: "Membership Chair",
-            image: "https://ui-avatars.com/api/?name=Member+6&background=random&color=fff",
+            image: pushpaImg,
             github: "https://github.com",
-            linkedin: "https://linkedin.com",
-            email: "member@acmsit.in",
+            linkedin: "https://www.linkedin.com/in/pushpalatha-g-m-11b266346",
+            email: "Pushpalatha70180@gmail.com",
             size: "medium"
         },
         {
@@ -113,10 +120,10 @@ const Team = () => {
             id: 10,
             name: "Iqraa Fathima",
             role: "Marketing Head",
-            image: "https://ui-avatars.com/api/?name=Member+10&background=random&color=fff",
-            github: "https://github.com",
-            linkedin: "https://linkedin.com",
-            email: "member@acmsit.in",
+            image: IqraaImg,
+            github: "https://github.com/IqraaFathima",
+            linkedin: "https://www.linkedin.com/in/iqraa-fathima-107aa0380/",
+            email: "iqrafathima3002@gmail.com",
             size: "medium"
         },
         {
@@ -133,10 +140,30 @@ const Team = () => {
             id: 12,
             name: "Vaishnavi T",
             role: "Design Head",
-            image: "https://ui-avatars.com/api/?name=Member+12&background=random&color=fff",
+            image: vaishnaviImg,
             github: "https://github.com",
-            linkedin: "https://linkedin.com",
-            email: "member@acmsit.in",
+            linkedin: "https://www.linkedin.com/in/vaishnavi-t-1ba7a9278/",
+            email: "vaishnavit0717@gmail.com",
+            size: "medium"
+        },
+        {
+            id: 13,
+            name: "Reshma Mesta",
+            role: "Member",
+            image: reshmaImg,
+            github: "https://github.com/Raksha-tm",
+            linkedin: "https://www.linkedin.com/in/raksha-mesta-7baa7b322",
+            email: "rakshatmesta@gmail.com",
+            size: "medium"
+        },
+        {
+            id: 14,
+            name: "Siddarama",
+            role: "Member",
+            image: SiddaImg,
+            github: "https://github.com/siddaramsiddhu",
+            linkedin: "https://www.linkedin.com/in/siddarama-siddhu-0a8718329",
+            email: "Siddaramsiddhu@gmail.com",
             size: "medium"
         }
     ];

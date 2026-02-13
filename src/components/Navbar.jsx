@@ -5,7 +5,10 @@ import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-
 import logo from '../assets/acm-sit-logo-new.png';
 import '../styles/navbar.css';
 
+import { useTheme } from '../context/ThemeContext';
+
 const Navbar = () => {
+    const { theme, toggleTheme } = useTheme();
     const [isOpen, setIsOpen] = useState(false);
     const [hidden, setHidden] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -91,10 +94,10 @@ const Navbar = () => {
                     ))}
                 </div>
 
-                {/* Right Icon / Toggle (Placeholder for now) */}
+                {/* Right Icon / Toggle */}
                 <div className="navbar-actions">
-                    <button className="theme-toggle" aria-label="Toggle Theme">
-                        <Moon size={20} />
+                    <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
+                        {theme === 'dark' ? <Moon size={20} /> : <Sun size={20} />}
                     </button>
                     <div className="menu-icon" onClick={toggleMenu}>
                         {isOpen ? <X size={28} /> : <Menu size={28} />}

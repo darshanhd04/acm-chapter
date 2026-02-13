@@ -13,9 +13,9 @@
 }
 
 .navbar.scrolled {
-    background-color: rgba(10, 10, 10, 0.8);
+    background-color: var(--nav-bg);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--nav-glass-border);
 }
 
 .navbar-container {
@@ -45,12 +45,13 @@
 }
 
 /* Center Pill Navigation */
+/* Center Pill Navigation */
 .nav-center-pill {
-    background: rgba(20, 20, 20, 0.6);
+    background: var(--nav-pill-bg);
     backdrop-filter: blur(10px);
     padding: 6px;
     border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--nav-glass-border);
     display: flex;
     gap: 4px;
 }
@@ -58,7 +59,7 @@
 .nav-link-pill {
     position: relative;
     padding: 10px 20px;
-    color: #a1a1aa;
+    color: var(--nav-link-color);
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
@@ -71,11 +72,11 @@
 }
 
 .nav-link-pill:hover {
-    color: white;
+    color: var(--nav-link-hover);
 }
 
 .nav-link-pill.active {
-    color: white;
+    color: var(--nav-link-hover);
 }
 
 .nav-text {
@@ -86,7 +87,7 @@
 .active-bg {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--nav-item-active-bg);
     border-radius: 40px;
     z-index: 1;
 }
@@ -94,7 +95,7 @@
 .hover-bg {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--nav-item-active-bg);
     /* Slightly brighter for hover */
     border-radius: 40px;
     z-index: 1;
@@ -110,7 +111,7 @@
 .theme-toggle {
     background: transparent;
     border: none;
-    color: white;
+    color: var(--text);
     cursor: pointer;
     padding: 8px;
     border-radius: 50%;
@@ -118,12 +119,12 @@
 }
 
 .theme-toggle:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--nav-item-active-bg);
 }
 
 .menu-icon {
     display: none;
-    color: white;
+    color: var(--text);
     cursor: pointer;
 }
 
@@ -135,7 +136,7 @@
     left: 0;
     width: 100%;
     height: calc(100vh - 90px);
-    background: rgba(0, 0, 0, 0.95);
+    background: var(--background);
     z-index: 999;
     display: flex;
     justify-content: flex-end;
@@ -154,7 +155,7 @@
 
 .mobile-nav-link {
     font-size: 1.5rem;
-    color: #a1a1aa;
+    color: var(--nav-link-color);
     text-decoration: none;
     font-weight: 700;
     display: block;

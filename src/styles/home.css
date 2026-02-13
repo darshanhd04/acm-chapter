@@ -15,7 +15,7 @@
 }
 
 .feature-card {
-    background: rgba(30, 41, 59, 0.4);
+    background: var(--card-bg);
     /* Semi-transparent */
     backdrop-filter: blur(12px);
     padding: 2rem;
@@ -27,7 +27,7 @@
 .feature-card:hover {
     border-color: var(--primary);
     box-shadow: 0 20px 40px -10px rgba(56, 189, 248, 0.3);
-    background: rgba(30, 41, 59, 0.7);
+    background: var(--card-hover-bg);
 }
 
 .feature-icon {
@@ -75,7 +75,8 @@
 .cta-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    background: linear-gradient(90deg, #fff, #94a3b8);
+    background: linear-gradient(90deg, var(--cta-gradient-from), var(--cta-gradient-to));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

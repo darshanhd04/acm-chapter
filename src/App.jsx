@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -21,23 +22,25 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <CustomCursor />
-      <Background />
-      <AnimatePresence mode="wait">
-        {loading ? (
-          <Loader key="loader" setLoading={setLoading} />
-        ) : (
-          <>
-            <Navbar />
-            <main className="main-content">
-              <AnimatedRoutes />
-            </main>
-            <Footer />
-          </>
-        )}
-      </AnimatePresence>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <CustomCursor />
+        <Background />
+        <AnimatePresence mode="wait">
+          {loading ? (
+            <Loader key="loader" setLoading={setLoading} />
+          ) : (
+            <>
+              <Navbar />
+              <main className="main-content">
+                <AnimatedRoutes />
+              </main>
+              <Footer />
+            </>
+          )}
+        </AnimatePresence>
+      </Router>
+    </ThemeProvider>
   );
 }
 
