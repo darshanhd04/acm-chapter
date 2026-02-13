@@ -25,7 +25,9 @@ const Team = () => {
         name: "Dr B G Premasudha",
         role: "Faculty Sponsor",
         image: premasudhaImg,
-        email: "[EMAIL_ADDRESS]",
+        email: "bgpremasudha@sit.ac.in",
+
+        linkedin: "https://www.linkedin.com/in/dr-prema-sudha-b-g-46396581/",
         size: "large"
     };
 
