@@ -1,6 +1,6 @@
 import React from 'react';
 import { Github, Linkedin, Instagram, Mail, ArrowUp, Send } from 'lucide-react';
-import logo from '../assets/acm-sit-logo-new.png'; // Assuming logo is available
+import logo from '../assets/ACM.png'; // Assuming logo is available
 import { motion } from 'framer-motion';
 import '../styles/footer.css';
 
@@ -27,7 +27,7 @@ const Footer = () => {
                 { name: "Blog", path: "/blog" },
                 { name: "About Us", path: "/about" },
                 { name: "Contact", path: "/contact" },
-                { name: "Join ACM", path: "/join" } // Placeholder
+                { name: "Become a Member", path: "https://share.google/Qab24nWU6nEAq11Cw" }
             ]
         }
     ];
@@ -46,8 +46,8 @@ const Footer = () => {
                         Join us to shape the future of technology at Siddaganga Institute of Technology.
                     </p>
                     <div className="social-links">
-                        <motion.a whileHover={{ y: -3 }} href="https://github.com/acm-sit" target="_blank" rel="noopener noreferrer"><Github size={20} /></motion.a>
-                        <motion.a whileHover={{ y: -3 }} href="https://linkedin.com/company/acm-sit" target="_blank" rel="noopener noreferrer"><Linkedin size={20} /></motion.a>
+                        <motion.a whileHover={{ y: -3 }} href="https://github.com/acm-sit63" target="_blank" rel="noopener noreferrer"><Github size={20} /></motion.a>
+                        <motion.a whileHover={{ y: -3 }} href="https://www.linkedin.com/in/mcasitacm-mcasitacm-1959913b2/" target="_blank" rel="noopener noreferrer"><Linkedin size={20} /></motion.a>
                         <motion.a whileHover={{ y: -3 }} href="https://instagram.com/acm_sit" target="_blank" rel="noopener noreferrer"><Instagram size={20} /></motion.a>
                         <motion.a whileHover={{ y: -3 }} href="mailto:acm@sit.ac.in"><Mail size={20} /></motion.a>
                     </div>
@@ -60,7 +60,13 @@ const Footer = () => {
                         <ul>
                             {section.links.map((link, idx) => (
                                 <li key={idx}>
-                                    <a href={link.path}>{link.name}</a>
+                                    <a
+                                        href={link.path}
+                                        target={link.path.startsWith('http') ? "_blank" : "_self"}
+                                        rel={link.path.startsWith('http') ? "noopener noreferrer" : ""}
+                                    >
+                                        {link.name}
+                                    </a>
                                 </li>
                             ))}
                         </ul>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
-import logo from '../assets/acm-sit-logo-new.png';
+import logo from '../assets/ACM.png';
 import '../styles/navbar.css';
 
 import { useTheme } from '../context/ThemeContext';
@@ -56,7 +56,7 @@ const Navbar = () => {
                 {/* Logo Section */}
                 <Link to="/" className="navbar-logo" onClick={() => setIsOpen(false)}>
                     <div className="logo-wrapper">
-                        <img src={logo} alt="ACM SIT Logo" />
+                        <img src={logo} alt="ACM" />
                     </div>
                 </Link>
 

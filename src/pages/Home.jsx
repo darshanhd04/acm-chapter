@@ -113,7 +113,12 @@ const Home = () => {
                         >
                             <h2>Ready to Start Your Journey?</h2>
                             <p>Join the ACM Student Chapter today and be part of a global community.</p>
-                            <a href="/contact" className="btn btn-primary">
+                            <a
+                                href="https://share.google/Qab24nWU6nEAq11Cw"
+                                className="btn btn-primary"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Join Now <ArrowRight size={20} />
                             </a>
                         </motion.div>

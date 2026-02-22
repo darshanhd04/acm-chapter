@@ -1,14 +1,21 @@
 :root {
-  /* Dark Mode (Default) */
-  --primary: #007bff;
-  --primary-hover: #0056b3;
-  --secondary: #6c757d;
-  --background: #0f172a;
-  --surface: #1e293b;
-  --text: #f8fafc;
-  --text-muted: #94a3b8;
-  --accent: #38bdf8;
-  --border: #334155;
+  /* Dark Mode (Advanced Graphite & Violet) */
+  --primary: #8b5cf6;
+  /* Violet 500 */
+  --primary-hover: #7c3aed;
+  /* Violet 600 */
+  --secondary: #71717a;
+  /* Zinc 500 */
+  --background: #09090b;
+  /* Zinc 950 */
+  --surface: #18181b;
+  /* Zinc 900 */
+  --text: #fafafa;
+  --text-muted: #a1a1aa;
+  --accent: #d946ef;
+  /* Fuchsia 500 */
+  --border: #27272a;
+  /* Zinc 800 */
   --nav-height: 4rem;
   --radius: 0.5rem;
   --font-heading: 'Outfit', sans-serif;
@@ -23,10 +30,10 @@
   --nav-link-hover: #ffffff;
   --nav-item-active-bg: rgba(255, 255, 255, 0.1);
 
-  --hero-gradient-start: rgba(20, 30, 60, 0.4);
-  --hero-badge-bg: rgba(255, 255, 255, 0.05);
-  --hero-badge-border: rgba(255, 255, 255, 0.1);
-  --hero-badge-text: #e5e5e5;
+  --hero-gradient-start: rgba(139, 92, 246, 0.1);
+  --hero-badge-bg: rgba(139, 92, 246, 0.05);
+  --hero-badge-border: rgba(139, 92, 246, 0.2);
+  --hero-badge-text: #ddd6fe;
   --hero-heading-color: #ffffff;
 
   --card-bg: rgba(30, 41, 59, 0.4);
@@ -43,15 +50,15 @@
 }
 
 :root[data-theme='light'] {
-  --primary: #007bff;
-  --primary-hover: #0056b3;
-  --secondary: #6c757d;
+  --primary: #7c3aed;
+  --primary-hover: #6d28d9;
+  --secondary: #71717a;
   --background: #ffffff;
-  --surface: #f1f5f9;
-  --text: #0f172a;
-  --text-muted: #64748b;
-  --accent: #0ea5e9;
-  --border: #cbd5e1;
+  --surface: #f4f4f5;
+  --text: #09090b;
+  --text-muted: #52525b;
+  --accent: #c026d3;
+  --border: #e4e4e7;
 
   /* Component Colors (Light Mode) */
   --nav-bg: rgba(255, 255, 255, 0.8);
