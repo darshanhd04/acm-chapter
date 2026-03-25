@@ -96,7 +96,7 @@ const Team = () => {
         },
         {
             id: 7,
-            name: "Roshni Begam",
+            name: "Roshni Begum",
             role: "Project & Research Head",
             image: roshniImg,
             github: "https://github.com/Roshnii2608",
