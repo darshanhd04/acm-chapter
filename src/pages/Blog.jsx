@@ -79,7 +79,7 @@ const Blog = () => {
     return (
         <PageTransition>
             <div className="page-container">
-                <div className="container" style={{ paddingTop: '180px', paddingBottom: '4rem' }}>
+                <div className="container page-top-padding">
                     <motion.h1
                         className="section-title"
                         initial={{ opacity: 0, y: -20 }}

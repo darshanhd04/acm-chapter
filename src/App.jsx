@@ -5,8 +5,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AnimatedRoutes from './components/AnimatedRoutes';
 import Loader from './components/Loader';
-import CustomCursor from './components/CustomCursor';
 import Background from './components/Background';
+import CustomCursor from './components/CustomCursor';
 import './index.css';
 import { AnimatePresence } from 'framer-motion';
 

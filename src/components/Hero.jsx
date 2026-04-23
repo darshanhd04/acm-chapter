@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Play, Users, MapPin, Edit } from 'lucide-react';
 import { motion } from 'framer-motion';
 import '../styles/hero.css';
+import { Magnetic } from './Magnetic';
 
 const Hero = () => {
     const containerVariants = {
@@ -76,34 +77,40 @@ const Hero = () => {
 
                 {/* Call to Action Buttons */}
                 <motion.div className="hero-actions" variants={itemVariants}>
-                    <motion.a
-                        href="https://share.google/Qab24nWU6nEAq11Cw"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-primary-pill"
-                        whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(139, 92, 246, 0.4)" }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        BECOME A MEMBER <ArrowRight size={18} />
-                    </motion.a>
-                    <motion.a
-                        href="https://forms.gle/45BJ5ocwD94i9zRz5"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-accent-pill"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <Edit size={18} /> UPDATE REGISTRATION
-                    </motion.a>
-                    <motion.a
-                        href="/explore"
-                        className="btn-secondary-pill"
-                        whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <Play size={18} fill="currentColor" /> Explore
-                    </motion.a>
+                    <Magnetic>
+                        <motion.a
+                            href="https://share.google/Qab24nWU6nEAq11Cw"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-primary-pill"
+                            whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(139, 92, 246, 0.4)" }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            BECOME A MEMBER <ArrowRight size={18} />
+                        </motion.a>
+                    </Magnetic>
+                    <Magnetic>
+                        <motion.a
+                            href="https://forms.gle/45BJ5ocwD94i9zRz5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-accent-pill"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <Edit size={18} /> UPDATE REGISTRATION
+                        </motion.a>
+                    </Magnetic>
+                    <Magnetic>
+                        <motion.a
+                            href="/explore"
+                            className="btn-secondary-pill"
+                            whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <Play size={18} fill="currentColor" /> Explore
+                        </motion.a>
+                    </Magnetic>
                 </motion.div>
 
                 {/* Bottom Image / Visual */}

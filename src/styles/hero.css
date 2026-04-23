@@ -7,9 +7,13 @@
     align-items: center;
     text-align: center;
     overflow: hidden;
-    padding-top: 120px;
-    /* Space for fixed navbar */
-    /* background-color: var(--background); Removed for animated background */
+    padding-top: 100px; /* Reduced from 120px */
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 80px;
+    }
 }
 
 /* Background Wrapper */
@@ -268,30 +272,43 @@
     }
 }
 
-/* Advanced Map Container */
+/* Advanced Map Container (Glassmorphism) */
 .hero-map-section {
     width: 100%;
     max-width: 900px;
-    margin-top: 4rem;
+    margin-top: 5rem;
     position: relative;
-    padding: 24px;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.5),
-        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(14, 165, 233, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .hero-map-section:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(14, 165, 233, 0.1);
+}
+
+/* Gradient Inner Border */
+.hero-map-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 32px;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.5), transparent 40%, transparent 60%, rgba(16, 185, 129, 0.5));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .map-header {
@@ -310,12 +327,13 @@
 
 .map-frame-container {
     width: 100%;
-    height: 350px;
-    border-radius: 12px;
+    height: 380px;
+    border-radius: 16px;
     overflow: hidden;
     position: relative;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2;
 }
 
 .map-iframe {

@@ -194,7 +194,7 @@ const Team = () => {
     return (
         <PageTransition>
             <div className="page-container">
-                <div className="container" style={{ paddingTop: '180px', paddingBottom: '4rem', maxWidth: '1800px' }}>
+                <div className="container page-top-padding" style={{ maxWidth: '1800px' }}>
 
                     {/* Header Section */}
                     <div className="team-header-section">

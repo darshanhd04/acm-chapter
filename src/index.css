@@ -1,21 +1,21 @@
 :root {
-  /* Dark Mode (Advanced Graphite & Violet) */
-  --primary: #8b5cf6;
-  /* Violet 500 */
-  --primary-hover: #7c3aed;
-  /* Violet 600 */
-  --secondary: #71717a;
-  /* Zinc 500 */
-  --background: #09090b;
-  /* Zinc 950 */
-  --surface: #18181b;
-  /* Zinc 900 */
-  --text: #fafafa;
-  --text-muted: #a1a1aa;
-  --accent: #d946ef;
-  /* Fuchsia 500 */
-  --border: #27272a;
-  /* Zinc 800 */
+  /* Dark Mode (Deep Cyberpunk Ocean) */
+  --primary: #0ea5e9;
+  /* Sky Blue 500 */
+  --primary-hover: #0284c7;
+  /* Sky Blue 600 */
+  --secondary: #64748b;
+  /* Slate 500 */
+  --background: #020617;
+  /* Slate 950 */
+  --surface: #0f172a;
+  /* Slate 900 */
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent: #10b981;
+  /* Emerald 500 */
+  --border: #1e293b;
+  /* Slate 800 */
   --nav-height: 4rem;
   --radius: 0.5rem;
   --font-heading: 'Outfit', sans-serif;
@@ -30,10 +30,10 @@
   --nav-link-hover: #ffffff;
   --nav-item-active-bg: rgba(255, 255, 255, 0.1);
 
-  --hero-gradient-start: rgba(139, 92, 246, 0.1);
-  --hero-badge-bg: rgba(139, 92, 246, 0.05);
-  --hero-badge-border: rgba(139, 92, 246, 0.2);
-  --hero-badge-text: #ddd6fe;
+  --hero-gradient-start: rgba(14, 165, 233, 0.1);
+  --hero-badge-bg: rgba(14, 165, 233, 0.05);
+  --hero-badge-border: rgba(14, 165, 233, 0.2);
+  --hero-badge-text: #bae6fd;
   --hero-heading-color: #ffffff;
 
   --card-bg: rgba(30, 41, 59, 0.4);
@@ -155,12 +155,18 @@ button {
 .section-title {
   font-size: 2.5rem;
   font-weight: 800;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-align: center;
   background: linear-gradient(to right, var(--text), var(--accent));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Common Page Padding */
+.page-top-padding {
+  padding-top: 130px;
+  padding-bottom: 4rem;
 }
 
 /* Animations */
@@ -193,4 +199,17 @@ h6 {
 .nav-link-pill {
   font-family: var(--font-heading);
   letter-spacing: 0.05em;
+}
+
+/* Global Mobile Responsiveness */
+@media (max-width: 768px) {
+  .page-top-padding {
+    padding-top: 100px;
+    padding-bottom: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
 }

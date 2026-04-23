@@ -57,7 +57,7 @@ const Events = () => {
     return (
         <PageTransition>
             <div className="page-container">
-                <div className="container" style={{ paddingTop: '180px', paddingBottom: '4rem' }}>
+                <div className="container page-top-padding">
                     <div className="events-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
                         <motion.h1
                             className="section-title"
